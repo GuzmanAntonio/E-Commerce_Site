@@ -38,7 +38,7 @@ Router.route('/:productId')
   })
   .delete((req, res) => {
     const deleteProductId = req.params.productId
-    Product.findById({_id: deleteProductId}, (err, product) => {
+    Product.remove({_id: deleteProductId}, (err, product) => {
       if (err) {
         res.json({error: err})
       } else {
@@ -48,7 +48,7 @@ Router.route('/:productId')
   })
   .put((req, res) => {
     const editProductId = req.params.productId
-    Products.findById({_id: editProductId}, (err, product) => {
+    Product.findById({_id: editProductId}, (err, product) => {
       if (err) {
         console.log('Wrong Turn', err)
         res.json({error: err})
