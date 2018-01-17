@@ -1,4 +1,5 @@
 import React from 'react'
+import {Link} from 'react-router-dom'
 import PropTypes from 'prop-types'
 import Card from 'material-ui/Card'
 import CardContent from 'material-ui/Card/CardContent'
@@ -31,7 +32,7 @@ const ProductCard = ({name, price, image, category, _id, deleteProduct}) =>
       </CardContent>
       <CardActions>
         <Button dense color='primary' onClick={() => deleteProduct(_id)}>DELETE</Button>
-        <Button raised color='primary'>VIEW</Button>
+        <Button raised color='primary'><Link to={`/product/${_id}`}>VIEW</Link></Button>
       </CardActions>
     </Card>
   </div>
