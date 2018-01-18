@@ -16,8 +16,7 @@ const styles = {
     textAlign: 'center',
     padding: '20',
     backgroundColor: '#ECECEC',
-    // background-color: #ececec;
-    backgroundImage: 'url("https://www.transparenttextures.com/patterns/black-thread-light.png")'
+    backgroundImage: 'url("https://www.transparenttextures.com/patterns/black-thread.png")'
   }
 }
 
@@ -28,7 +27,7 @@ const Main = ({domainData}) =>
     <Route path='/add-product' component={AddProductContainer} />
     <Route path='/products' render={() => <ProductsContainer domainData={domainData}/>} />
     <Route exact path='/product/:_id' component={ViewSingleProductContainer} />
-    <Route path='/sign-up' component={SignUpContainer} />
+    <Route path='/sign-up' render={() => <SignUpContainer domainData={domainData} />} />
   </main>
 
 export default Main

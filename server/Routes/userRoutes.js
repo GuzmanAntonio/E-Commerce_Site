@@ -47,17 +47,17 @@ Router.route('/:userId')
     })
   })
   .put((req, res) => {
-    const editUser = req.params.editUser
-    User.findById({_id: editUser}, (err, user) => {
+    const editUserId = req.params.userId
+    User.findById({_id: editUserId}, (err, user) => {
       if (err) {
-        res.json({error: err})
+        res.json({ error: err })
       } else {
         user.setUserData(req.body)
-        user.save((err, updateUser) => {
+        user.save((err, updatedUser) => {
           if (err) {
-            res.json({error: err})
+            res.json({ error: err })
           } else {
-            res.json({msg: 'SUCCESSFUL EDIT', data: updateUser})
+            res.json({ msg: `UPDATED: ${editUserId}`, data: updatedUser })
           }
         })
       }

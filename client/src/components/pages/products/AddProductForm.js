@@ -35,7 +35,7 @@ const AddProductForm = ({ onChangeHandler, submitProductToServer, name, price, i
           <TextField label='Image' placeholder='image' onChange={onChangeHandler} id={'image'} />
         </div>
         <div>
-          <TextField label='Category' placeholder='category'onChange={onChangeHandler} id={'category'} />
+          <TextField label='Category' placeholder='category' onChange={onChangeHandler} id={'category'} />
         </div>
         <div style={styles.buttonContainer}>
           <Button raised disabled={!name || !price || !image || !category} onClick={submitProductToServer} >
