@@ -1,5 +1,6 @@
 import React from 'react'
 import NavItem from './NavItem'
+import HeaderLink from './HeaderLink'
 
 const styles = {
   container: {
@@ -16,7 +17,7 @@ const styles = {
   }
 }
 
-const Header = () => {
+const Header = ({domainData}) => {
   return (
     <header style={styles.container}>
       <nav style={styles.nav}>
@@ -24,7 +25,10 @@ const Header = () => {
         <NavItem to='/about' > About </NavItem>
         <NavItem to='/products' > Products </NavItem>
         <NavItem to='/add-product' > Add Products </NavItem>
-        <NavItem to='/sign-up' > Sign-Up </NavItem>
+        {domainData.loggedOut ? <NavItem to='/sign-up'> Register </NavItem> : null }
+        {domainData.loggedOut ? <NavItem to='/login'> Login </NavItem> : null }
+        {domainData.loggedIn ? <HeaderLink onClick={domainData.logoutUser}> Log Out </HeaderLink> : null }
+        {domainData.loggedIn ? <HeaderLink>{domainData.user.local.email}</HeaderLink> : null}
       </nav>
     </header>
   )

@@ -5,7 +5,7 @@ import About from '../pages/About'
 import ProductsContainer from '../pages/products/ProductsContainer'
 import ViewSingleProductContainer from '../pages/products/ViewSingleProductContainer'
 import SignUpContainer from '../pages/authentication/SignUpContainer'
-// import AddProductForm from '../products/AddProductForm'
+import LogInContainer from '../pages/authentication/LogInContainer'
 import AddProductContainer from '../pages/products/AddProductContainer'
 
 const styles = {
@@ -28,6 +28,7 @@ const Main = ({domainData}) =>
     <Route path='/products' render={() => <ProductsContainer domainData={domainData}/>} />
     <Route exact path='/product/:_id' component={ViewSingleProductContainer} />
     <Route path='/sign-up' render={() => <SignUpContainer domainData={domainData} />} />
+    <Route path='/login' render={() => <LogInContainer domainData={domainData} /> } />
   </main>
 
 export default Main

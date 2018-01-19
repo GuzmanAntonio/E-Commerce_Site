@@ -16,7 +16,7 @@ const styles = {
   }
 }
 
-const SignUpForm = ({onUserChange, submitUser, firstName, lastName, email}) =>
+const SignUpForm = ({onUserChange, submitUser, firstName, lastName, email, password}) =>
   <form>
     <div style={styles.container} >
       <Card raised='true' >
@@ -26,12 +26,12 @@ const SignUpForm = ({onUserChange, submitUser, firstName, lastName, email}) =>
         <input type='text' id='firstName' placeholder='first Name' onChange={onUserChange} />
         <input type='text' id='lastName' placeholder='Last Name' onChange={onUserChange} />
         <input type='text' id='email' placeholder='Email' onChange={onUserChange} />
+        <input type='text' id='password' placeholder='password' onChange={onUserChange} />
       </Card>
     </div>
     <div>
-      <Button raised onClick={submitUser}>
-        <Link to='/api/users' >SUBMIT</Link>
-      </Button>
+      <Button raised onClick={submitUser}> SUBMIT </Button>
+      <Link to='/login' >LOGIN</Link>
     </div>
   </form>
 

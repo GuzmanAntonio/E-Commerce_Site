@@ -18,6 +18,7 @@ const ajaxRequest = (uri, method, body) => {
 
 const handleErrors = response => {
   if (!response.ok) {
+    console.log('an error was found')
     return response.json()
       .then(({message, data}) => {
         const err = Error(message)
@@ -29,7 +30,7 @@ const handleErrors = response => {
   return response
 }
 
-export const signupUser = (user) => ajaxRequest('/sign-up', 'POST', user)
+export const signupUser = (user) => ajaxRequest('sign-up', 'POST', user)
 
 export const loginUser = (email, password) => ajaxRequest('login', 'POST', {email, password})
 

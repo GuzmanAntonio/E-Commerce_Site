@@ -7,7 +7,9 @@ import Footer from './Footer'
 const Layout = ({domainData}) => {
   return (
     <div>
-      <Header />
+      <Header 
+        domainData={domainData}
+      />
       <Main 
         domainData={domainData}
       />
