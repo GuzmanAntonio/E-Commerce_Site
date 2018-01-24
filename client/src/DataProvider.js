@@ -47,7 +47,7 @@ class DataProvider extends Component {
       UserApi.getUser()
         .then(user => {
           console.log(user, 'FOUND USER')
-          this.setState({user})
+          this.setState({user: user})
           return user
         }),
     logoutUser: () =>
