@@ -1,23 +1,22 @@
 import React from 'react'
-import CartCard from './CartCard'
 import PropTypes from 'prop-types'
 
-const CartList = ({cartProducts, products}) => {
-  return (
-    <div>
-      {
-        products.map(product =>
-          <CartCard
-            product={product}
-          />
-        )
-      }
-    </div>
-  )
-}
+const CartList = ({cartProducts, products, cartReady}) =>
+  <div>
+    {
+      cartReady
+        ? cartProducts.map((product) => {
+          return (
+            product = {product}
+          )
+        })
+        : 'EMPTY CART'
+    }
+  </div>
 
 CartList.propTypes = {
-  cartProducts: PropTypes.func.isRequired
+  cartProducts: PropTypes.func.isRequired,
+  cartReady: PropTypes.func.isRequired
 }
 
 export default CartList
