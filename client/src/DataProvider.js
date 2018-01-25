@@ -20,6 +20,14 @@ class DataProvider extends Component {
         this.setState({isLoaded: true, products: response.data})
       })
     },
+    addProduct: (newProduct) => {
+      $.ajax({
+        url: '/api/products',
+        method: 'POST'
+      }).done((response) => {
+        this.methods.getAllProducts()
+      })
+    },
     deleteProduct: (id) => {
       $.ajax({
         url: `/api/products/${id}`,
@@ -54,7 +62,22 @@ class DataProvider extends Component {
       UserApi.logoutUser()
         .then(() => {
           this.setState({user: null})
+        }),
+    addItemToCart: (productId) => {
+      if (this.state.user != null) {
+        $.ajax({
+          url: `/api/users/cart/${this.state.user._id}`,
+          method: 'PUT',
+          data: {product_id: productId}
+        }).done((response) => {
+          console.log(response)
+          console.log(this.state.products)
+          this.methods.getUser()
         })
+      } else {
+        console.log('user must be logged in')
+      }
+    }
   }
 
   componentDidMount () {
@@ -66,8 +89,8 @@ class DataProvider extends Component {
     const domainData = {
       ...this.state,
       ...this.methods,
-      loggedIn: this.state.user !== null,
-      loggedOut: this.state.user === null
+      loggedIn: this.state.user != null,
+      loggedOut: this.state.user == null
     }
 
     return (

@@ -6,6 +6,7 @@ const ProductsContainer = ({domainData}) =>
   <ProductsList
     products={domainData.products}
     deleteProduct={domainData.deleteProduct}
+    addItemToCart={domainData.addItemToCart}
   />
 
 export default ProductsContainer

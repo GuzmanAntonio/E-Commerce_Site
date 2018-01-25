@@ -7,6 +7,7 @@ import ViewSingleProductContainer from '../pages/products/ViewSingleProductConta
 import SignUpContainer from '../pages/authentication/SignUpContainer'
 import LogInContainer from '../pages/authentication/LogInContainer'
 import AddProductContainer from '../pages/products/AddProductContainer'
+import CartContainer from '../pages/products/CartContainer'
 
 const styles = {
   container: {
@@ -25,10 +26,11 @@ const Main = ({domainData}) =>
     <Route exact path='/' component={Home} />
     <Route path='/about' component={About} />
     <Route path='/add-product' component={AddProductContainer} />
-    <Route path='/products' render={() => <ProductsContainer domainData={domainData}/>} />
+    <Route path='/products' render={() => <ProductsContainer domainData={domainData} /> } />
     <Route exact path='/product/:_id' component={ViewSingleProductContainer} />
     <Route path='/sign-up' render={() => <SignUpContainer domainData={domainData} />} />
     <Route path='/login' render={() => <LogInContainer domainData={domainData} /> } />
+    <Route path='/cart' render={() => <CartContainer domainData={domainData} /> } />
   </main>
 
 export default Main

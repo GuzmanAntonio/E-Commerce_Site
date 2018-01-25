@@ -1,7 +1,7 @@
 import React from 'react'
 import ProductCard from './ProductCard'
 
-const ProductList = ({products, deleteProduct}) => {
+const ProductList = ({products, deleteProduct, addItemToCart}) => {
   return (
     <div>
       {
@@ -9,6 +9,7 @@ const ProductList = ({products, deleteProduct}) => {
           return <ProductCard
             {...product}
             deleteProduct={deleteProduct}
+            addItemToCart={addItemToCart}
           />
         })
       }

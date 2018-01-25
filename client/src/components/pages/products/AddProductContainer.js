@@ -12,7 +12,7 @@ class AddProductContainer extends Component {
 
 onChangeHandler = (e) => this.setState({ [e.target.id]: e.target.value })
 
-submitProductToServer = () => {
+submitProductToServer = (e) => {
   const {name, price, image, category} = this.state
   const newProduct = {name, price, image, category}
   $.ajax({

@@ -15,7 +15,7 @@ const styles = {
   }
 }
 
-const ProductCard = ({name, price, image, category, _id, deleteProduct}) =>
+const ProductCard = ({name, price, image, category, _id, deleteProduct, addItemToCart}) =>
   <div>
     <Card>
       <CardMedia
@@ -33,6 +33,7 @@ const ProductCard = ({name, price, image, category, _id, deleteProduct}) =>
       <CardActions>
         <Button dense color='primary' onClick={() => deleteProduct(_id)}>DELETE</Button>
         <Button raised color='primary'><Link to={`/product/${_id}`}>VIEW</Link></Button>
+        <Button onClick={() => addItemToCart(_id)}>Add item</Button>
       </CardActions>
     </Card>
   </div>

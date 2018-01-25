@@ -115,7 +115,7 @@ Router.route('/:userId')
     const userId = req.params.userId
     User.findById({_id: userId})
       .populate('cart')
-      .exect((err, users) => {
+      .exec((err, users) => {
         if (err) {
           res.json({error: err})
         } else {

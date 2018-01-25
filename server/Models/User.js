@@ -10,6 +10,8 @@ const User = new Schema({
   },
   created: {type: Date, required: true},
   cart: [{type: mongoose.Schema.Types.ObjectId, ref: 'Product'}]
+}, {
+  usePushEach: true
 })
 
 User.methods.setUserData = function (requestBody) {
