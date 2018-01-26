@@ -4,10 +4,13 @@ import PropTypes from 'prop-types'
 
 const styles = {
   container: {
+    display: 'flex'
   },
   nav: {
     textDecoration: 'none',
-    color: 'white'
+    display: 'flex',
+    color: 'white',
+    fontSize: '20px'
   },
   active: {
     color: 'red'

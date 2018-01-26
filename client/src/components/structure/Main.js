@@ -12,12 +12,9 @@ import CartContainer from '../pages/products/CartContainer'
 const styles = {
   container: {
     display: 'flex',
-    flexDirection: 'column',
-    justifyContent: 'space-between',
-    textAlign: 'center',
-    padding: '20',
-    backgroundColor: '#ECECEC',
-    backgroundImage: 'url("https://www.transparenttextures.com/patterns/black-thread.png")'
+    padding: '100',
+    backgroundColor: '#ececec',
+    backgroundImage: 'url("https://www.transparenttextures.com/patterns/asfalt-dark.png")'
   }
 }
 

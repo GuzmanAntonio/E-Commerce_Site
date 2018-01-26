@@ -5,6 +5,8 @@ const bodyParser = require('body-parser')
 const mongoose = require('mongoose')
 const productsRoutes = require('./Routes/productsRoutes')
 const userRoutes = require('./Routes/userRoutes')
+const orderRoutes = require('./Routes/orderRoutes')
+
 const app = express()
 
 const port = 3001
@@ -28,6 +30,7 @@ app.use(require('./config/error-handler'))
 
 app.use('/api/products', productsRoutes)
 app.use('/api/users', userRoutes)
+app.use('./api/orders', orderRoutes)
 
 const server = app.listen(port, () => console.log(`Running on port: ${port} 🙈 🙉 🙊`))
 

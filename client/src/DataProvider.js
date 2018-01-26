@@ -55,6 +55,7 @@ class DataProvider extends Component {
     getUser: (user) =>
       UserApi.getUser(user._id)
         .then(user => {
+          console.log('recieved user', user)
           this.setState({user, cartReady: true})
           return user
         }),
@@ -64,16 +65,33 @@ class DataProvider extends Component {
           this.setState({user: null})
         }),
     addItemToCart: (productId) => {
+      // console.log(`add item method ${productId}`)
       if (this.state.user != null) {
         $.ajax({
           url: `/api/users/cart/${this.state.user._id}`,
           method: 'PUT',
           data: {product_id: productId}
         }).done((response) => {
+          console.log(response, 'recieved response')
           this.methods.getUser(this.state.user)
         })
       } else {
         console.log('User not logged in')
+      }
+    },
+    removeItemFromCart: (productId) => {
+      if (this.state.user != null) {
+        $.ajax({
+          url: `/api/users/removeFromCart/${this.state.user._id}`,
+          method: 'PUT',
+          data: {product_id: productId}
+        }).then((response) => {
+          this.methods.getUser(this.state.user)
+        }).catch((eror) => {
+          console.log('COULD NOT REMOVE ITEM FROM CART')
+        })
+      } else {
+        console.log('USER MUST BE LOGGED IN')
       }
     }
   }
