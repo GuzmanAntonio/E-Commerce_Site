@@ -5,18 +5,20 @@ import Card from 'material-ui/Card'
 const styles = {
   container: {
     display: 'flex',
-    backgroundColor: '#FDE3A7',
+    backgroundColor: '#C5EFF7',
+    alignItems: 'center',
     flexDirection: 'column',
     width: '100vw',
     height: 'auto',
-    padding: '20px'
+    padding: '20px',
+    fontFamily: 'Graduate'
   }
 }
 
 const About = () =>
   <div styles={styles.container} >
     <Card>
-      <div>
+      <div style={styles.container}>
         <Typography type='display1' gutterBottom >
           <h1>About</h1>
         </Typography>

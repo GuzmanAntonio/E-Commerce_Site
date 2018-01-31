@@ -4,6 +4,12 @@ import Header from './header/Header'
 import Main from './Main'
 import Footer from './Footer'
 
+// const styles = {
+//   contianer: {
+
+//   }
+// }
+
 const Layout = ({domainData}) => {
   return (
     <div>

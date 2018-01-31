@@ -5,17 +5,24 @@ import HeaderLink from './HeaderLink'
 
 const styles = {
   container: {
-    padding: '15',
     display: 'flex',
-    backgroundColor: '#F1A9A0',
+    height: '50px',
+    backgroundColor: '#2d3436',
+    flexFlow: 'row-wrap',
     flexDirection: 'row',
+    width: '100vw',
+    justifyContent: 'space-around'
   },
   nav: {
-    fontFamily: 'Candal, sans-serif'
+    fontFamily: 'Candal, sans-serif',
+    display: 'flex',
+    margin: 'auto',
+    alignItems: 'center',
+    justifyContent: 'space-between'
   },
   links: {
-    display: 'flex',
-    justifyContent: 'space-around'
+    display: 'flex'
+    // justifyContent: 'space-between'
   }
 }
 

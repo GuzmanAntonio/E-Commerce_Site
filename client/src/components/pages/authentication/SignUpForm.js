@@ -7,12 +7,20 @@ import PropTypes from 'prop-types'
 
 const styles = {
   container: {
+    display: 'flex'
+  },
+  title: {
     display: 'flex',
-    flexDirection: 'column',
-    margin: '3%',
-    alignItems: 'center',
-    marginBottom: '10',
-    height: '50'
+    alignItems: 'center'
+  },
+  form: {
+    marginBottom: '10px'
+  },
+  button: {
+
+  },
+  link: {
+
   }
 }
 
@@ -31,7 +39,7 @@ const SignUpForm = ({onUserChange, submitUser, firstName, lastName, email, passw
     </div>
     <div>
       <Button raised onClick={submitUser}> SUBMIT </Button>
-      <Link to='/login' >LOGIN</Link>
+      <Button raised ><Link to='/login' >LOGIN</Link></Button>
     </div>
   </form>
 

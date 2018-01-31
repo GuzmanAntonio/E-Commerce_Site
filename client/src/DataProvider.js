@@ -93,6 +93,15 @@ class DataProvider extends Component {
       } else {
         console.log('USER MUST BE LOGGED IN')
       }
+    },
+    orders: () => {
+      $.ajax({
+        url: '/api/orders',
+        method: 'GET'
+      }).done((response) => {
+        console.log(response, 'ORDERS')
+        this.setState({orders: response.data})
+      })
     }
   }
 
